@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Inglés 1er Semestre - CBTIS 123</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Logo DGETI -->
+    <div class="dgeti-logo">
+        DGETI<br>SEP
+    </div>
+    
+    <!-- Marca de agua CBTIS 123 -->
+    <div class="watermark">CBTIS 123</div>
+
+    <!-- Botón de sonido -->
+    <button class="sound-toggle-btn" onclick="toggleSound()">🔊</button>
+
+    <!-- Contador de intentos de trampa -->
+    <div class="cheat-counter" id="cheatCounter" style="display: none;">
+        <div class="cheat-counter-content">
+            <span class="cheat-counter-icon">⚠️</span>
+            <span>Intentos: <span id="cheatCount">0</span></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="timer" id="timer">60:00</div>
+            <h1>ENGLISH TEST FIRST SEMESTER</h1>
+            <p class="subtitle">Sistema de Evaluación de Inglés - Nivel Básico</p>
+            <p class="school-info">Centro de Bachillerato Tecnológico Industrial y de Servicios No. 123</p>
+            <p class="teacher-info">Departamento de Inglés - 1er Semestre - 3AM-PRO</p>
+        </div>
+
+        <div class="content">
+            <!-- Pantalla de Login -->
+            <div class="login-screen" id="loginScreen">
+                <h2>🔐 Acceso al Examen de Inglés</h2>
+                <p>Por favor ingresa tus datos para comenzar el examen</p>
+                
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="studentName">📝 Nombre Completo:</label>
+                        <input type="text" id="studentName" placeholder="Ej: Juan Pérez Hernández" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentGroup">👥 Grupo:</label>
+                        <input type="text" id="studentGroup" placeholder="Ej: 1-AM-PRO, 1-PM-CONTA, 1-AM-MEC" required>
+                    </div>
+                    
+                    <div class="exam-rules">
+                        <h4>📋 Información Importante:</h4>
+                        <ul>
+                            <li>Verifica que tus datos sean correctos</li>
+                            <li>Una vez iniciado el examen no podrás modificarlos</li>
+                            <li>Tienes 60 minutos para completar el examen</li>
+                            <li>No se permiten cambios de pestaña o aplicación</li>
+                            <li><strong>Formato de grupo recomendado: 1-AM-PRO (Semestre-Turno-Especialidad)</strong></li>
+                        </ul>
+                    </div>
+
+                    <button class="login-btn" onclick="validateLogin()">🎯 INICIAR EXAMEN</button>
+                </div>
+            </div>
+
+            <!-- Pantalla de inicio -->
+            <div class="start-screen" id="startScreen" style="display: none;">
+                <h2>¡Bienvenido, <span id="displayName">Estudiante</span>!</h2>
+                <p>Estás a punto de comenzar el examen de inglés del <strong>1er Semestre - 3AM-PRO</strong></p>
+                
+                <div class="student-info">
+                    <h3>📊 Tus Datos:</h3>
+                    <p><strong>Nombre:</strong> <span id="infoName"></span></p>
+                    <p><strong>Grupo:</strong> <span id="infoGroup"></span></p>
+                </div>
+
+                <div class="exam-info">
+                    <p><strong>⏱️ Tiempo límite:</strong> 60 minutos</p>
+                    <p><strong>📝 Total de preguntas:</strong> 30</p>
+                    <p><strong>🎯 Tipo:</strong> Selección múltiple</p>
+                    <p><strong>📚 Nivel:</strong> Inglés Básico - 1er Semestre</p>
+                    <p><strong>👥 Grupo:</strong> 3AM-PRO</p>
+                </div>
+                
+                <div class="exam-rules">
+                    <h4>🚨 REGLAS DEL EXAMEN:</h4>
+                    <ul>
+                        <li>El examen debe realizarse en <strong>pantalla completa</strong></li>
+                        <li><strong>NO cambiar de pestaña o aplicación</strong> durante el examen</li>
+                        <li><strong>NO recargar la página</strong> una vez iniciado</li>
+                        <li><strong>NO maximizar/minimizar ventanas</strong></li>
+                        <li>Cualquier intento de trampa resultará en <strong>bloqueo inmediato</strong></li>
+                        <li>El temporizador <strong>NO se detiene</strong> por ninguna razón</li>
+                    </ul>
+                </div>
+
+                <button class="start-btn" onclick="startExam()">🎯 COMENZAR EXAMEN</button>
+                <button class="restart-btn" onclick="returnToLogin()" style="background: #6c757d; margin-top: 10px;">✏️ CORREGIR DATOS</button>
+            </div>
+
+            <!-- Pantalla de examen bloqueado -->
+            <div class="blocked-screen" id="blockedScreen" style="display: none;">
+                <div class="icon">🚫</div>
+                <h2>EXAMEN BLOQUEADO - 1ER SEMESTRE</h2>
+                <h3>Violación del protocolo de evaluación</h3>
+                
+                <div class="student-info" style="background: rgba(255,255,255,0.1); color: white;">
+                    <p><strong>Estudiante:</strong> <span id="blockedName"></span></p>
+                    <p><strong>Grupo:</strong> <span id="blockedGroup"></span></p>
+                    <p><strong>Razón del bloqueo:</strong> <span id="blockReason">No especificada</span></p>
+                </div>
+                
+                <div class="block-reason">
+                    <h3>📋 REPORTE DE INCIDENCIA</h3>
+                    <p>Este examen ha sido bloqueado por el sistema de seguridad.</p>
+                    <div class="cheat-log">
+                        <h4>Registro de actividades sospechosas:</h4>
+                        <ul id="cheatLogList">
+                            <!-- Se llenará con JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor de preguntas -->
+            <div class="question-container" id="questionContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-info">
+                    <span>📝 Pregunta <span id="currentQuestion">1</span> de 30</span>
+                    <span>⭐ Puntuación: <span id="currentScore">0</span></span>
+                    <span>⏰ Tiempo: <span id="currentTimer">60:00</span></span>
+                </div>
+
+                <div class="student-mini-info">
+                    <span><strong>Estudiante:</strong> <span id="miniName"></span></span>
+                    <span><strong>Grupo:</strong> <span id="miniGroup"></span></span>
+                </div>
+
+                <div class="question" id="questionText"></div>
+                
+                <div class="answers" id="answersContainer"></div>
+                
+                <button class="next-btn" id="nextBtn" onclick="nextQuestion()">➡️ Siguiente Pregunta</button>
+            </div>
+
+            <!-- Pantalla de resultados -->
+            <div class="results-screen" id="resultsScreen" style="display: none;">
+                <h2>🎉 ¡EXAMEN COMPLETADO - 1ER SEMESTRE!</h2>
+                <div class="score" id="finalScore">0/30</div>
+                
+                <div class="student-info">
+                    <h3>📊 Resultados del Estudiante</h3>
+                    <p><strong>👤 Nombre:</strong> <span id="resultName"></span></p>
+                    <p><strong>👥 Grupo:</strong> <span id="resultGroup"></span></p>
+                    <p><strong>📅 Fecha:</strong> <span id="examDate"></span></p>
+                    <p><strong>⏱️ Duración:</strong> <span id="examDuration"></span></p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number" id="correctAnswers">0</div>
+                        <div class="stat-label">✅ Correctas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="incorrectAnswers">0</div>
+                        <div class="stat-label">❌ Incorrectas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="percentage">0%</div>
+                        <div class="stat-label">📈 Porcentaje</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="timeUsed">0:00</div>
+                        <div class="stat-label">⏰ Tiempo Usado</div>
+                    </div>
+                </div>
+
+                <!-- Reporte de seguridad -->
+                <div class="cheat-report" id="cheatReport" style="display: none;">
+                    <div class="cheat-report-header">
+                        <span class="cheat-report-icon">🛡️</span>
+                        <h3>REPORTE DE SEGURIDAD</h3>
+                    </div>
+                    <div class="cheat-report-content">
+                        <p>Se registraron algunas advertencias durante el examen:</p>
+                        <ul class="cheat-report-list" id="cheatReportList">
+                            <!-- Se llenará con JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="restart-btn" onclick="returnToLogin()">🏠 VOLVER AL INICIO</button>
+                    <button class="restart-btn" onclick="restartExam()" style="background: #17a2b8; margin-top: 10px;">🔄 REALIZAR OTRO EXAMEN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advertencia de pantalla completa -->
+    <div class="fullscreen-warning" id="fullscreenWarning" style="display: none;">
+        <h2>⚠ ADVERTENCIA DE SEGURIDAD - 1ER SEMESTRE</h2>
+        <p>Has salido del modo pantalla completa</p>
+        <p>El examen se bloqueará automáticamente si continúas</p>
+        <p><strong>Intentos restantes: <span id="remainingAttempts">2</span></strong></p>
+        <button class="return-fullscreen-btn" onclick="returnToFullscreen()">🖥️ REGRESAR A PANTALLA COMPLETA</button>
+    </div>
+
+    <!-- Popup de advertencia de trampa -->
+    <div class="cheat-warning-popup" id="cheatWarningPopup" style="display: none;">
+        <div class="cheat-warning-content">
+            <span class="cheat-warning-icon">🚨</span>
+            <span class="cheat-warning-text" id="cheatWarningText">Actividad sospechosa detectada</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

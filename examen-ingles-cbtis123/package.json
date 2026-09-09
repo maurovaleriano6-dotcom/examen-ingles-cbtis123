@@ -1,0 +1,17 @@
+{
+  "name": "examen-ingles-cbtis123",
+  "version": "1.0.0",
+  "description": "Examen de inglés con guardado de resultados en base de datos y exportación a Excel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
