@@ -1,5 +1,5 @@
 // ==========================================================
-// Servidor del Examen de Inglés - CBTIS 123
+// Servidor del Examen de Cultura General
 // Guarda resultados y actividad sospechosa en una base de
 // datos Turso (SQLite en la nube, gratis y persistente), y
 // permite exportarlos a un archivo Excel.
@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 
 // Contraseña para entrar al panel del maestro y exportar datos.
 // IMPORTANTE: cámbiala usando una variable de entorno TEACHER_PASSWORD.
-const TEACHER_PASSWORD = process.env.TEACHER_PASSWORD || 'cbtis123-2026';
+const TEACHER_PASSWORD = process.env.TEACHER_PASSWORD || 'examen-2026';
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));

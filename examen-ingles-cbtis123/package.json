@@ -1,7 +1,7 @@
 {
-  "name": "examen-ingles-cbtis123",
+  "name": "examen-cultura-general",
   "version": "1.0.0",
-  "description": "Examen de inglés con guardado de resultados en base de datos y exportación a Excel",
+  "description": "Examen de cultura general con guardado de resultados en base de datos y exportación a Excel",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
