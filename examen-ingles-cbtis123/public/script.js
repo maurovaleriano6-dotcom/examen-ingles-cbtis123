@@ -1025,7 +1025,8 @@ document.addEventListener('gesturestart', function (e) {
 });
 
 document.addEventListener('touchmove', function(event) {
-    if (event.scale !== 1) {
+    // Solo bloquear el gesto de pellizcar para zoom (2 dedos)
+    if (event.touches && event.touches.length > 1) {
         event.preventDefault();
     }
 }, { passive: false });
