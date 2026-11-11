@@ -13,36 +13,7 @@ body {
     position: relative;
 }
 
-/* Logo DGETI */
-.dgeti-logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: #0047ab;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border: 2px solid white;
-}
 
-/* Marca de agua CBTIS 123 */
-.watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    font-size: 120px;
-    font-weight: bold;
-    color: rgba(255,255,255,0.1);
-    pointer-events: none;
-    z-index: 0;
-    white-space: nowrap;
-}
 
 /* Botón de sonido */
 .sound-toggle-btn {
@@ -148,17 +119,6 @@ body {
     color: #666;
     font-size: 1.2em;
     margin-bottom: 10px;
-}
-
-.school-info {
-    color: #0047ab;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.teacher-info {
-    color: #666;
-    font-style: italic;
 }
 
 .content {
@@ -645,17 +605,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
     
-    .dgeti-logo {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin-bottom: 20px;
-        display: inline-block;
-    }
     
-    .watermark {
-        font-size: 60px;
-    }
 }
 
 /* Impresión */

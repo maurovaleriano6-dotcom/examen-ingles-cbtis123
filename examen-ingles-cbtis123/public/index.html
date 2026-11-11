@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Inglés 1er Semestre - CBTIS 123</title>
+    <title>Examen de Cultura General - Nivel Básico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <!-- Logo DGETI -->
-    <div class="dgeti-logo">
-        DGETI<br>SEP
-    </div>
-    
-    <!-- Marca de agua CBTIS 123 -->
-    <div class="watermark">CBTIS 123</div>
 
     <!-- Botón de sonido -->
     <button class="sound-toggle-btn" onclick="toggleSound()">🔊</button>
@@ -30,16 +22,14 @@
     <div class="container">
         <div class="header">
             <div class="timer" id="timer">60:00</div>
-            <h1>ENGLISH TEST FIRST SEMESTER</h1>
-            <p class="subtitle">Sistema de Evaluación de Inglés - Nivel Básico</p>
-            <p class="school-info">Centro de Bachillerato Tecnológico Industrial y de Servicios No. 123</p>
-            <p class="teacher-info">Departamento de Inglés - 1er Semestre - 3AM-PRO</p>
+            <h1>EXAMEN DE CULTURA GENERAL</h1>
+            <p class="subtitle">Sistema de Evaluación - Nivel Básico</p>
         </div>
 
         <div class="content">
             <!-- Pantalla de Login -->
             <div class="login-screen" id="loginScreen">
-                <h2>🔐 Acceso al Examen de Inglés</h2>
+                <h2>🔐 Acceso al Examen</h2>
                 <p>Por favor ingresa tus datos para comenzar el examen</p>
                 
                 <div class="login-form">
@@ -49,8 +39,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="studentGroup">👥 Grupo:</label>
-                        <input type="text" id="studentGroup" placeholder="Ej: 1-AM-PRO, 1-PM-CONTA, 1-AM-MEC" required>
+                        <label for="studentGroup">👥 Grupo o equipo:</label>
+                        <input type="text" id="studentGroup" placeholder="Ej: Grupo A" required>
                     </div>
                     
                     <div class="exam-rules">
@@ -60,7 +50,6 @@
                             <li>Una vez iniciado el examen no podrás modificarlos</li>
                             <li>Tienes 60 minutos para completar el examen</li>
                             <li>No se permiten cambios de pestaña o aplicación</li>
-                            <li><strong>Formato de grupo recomendado: 1-AM-PRO (Semestre-Turno-Especialidad)</strong></li>
                         </ul>
                     </div>
 
@@ -71,7 +60,7 @@
             <!-- Pantalla de inicio -->
             <div class="start-screen" id="startScreen" style="display: none;">
                 <h2>¡Bienvenido, <span id="displayName">Estudiante</span>!</h2>
-                <p>Estás a punto de comenzar el examen de inglés del <strong>1er Semestre - 3AM-PRO</strong></p>
+                <p>Estás a punto de comenzar el <strong>Examen de Cultura General</strong></p>
                 
                 <div class="student-info">
                     <h3>📊 Tus Datos:</h3>
@@ -83,8 +72,7 @@
                     <p><strong>⏱️ Tiempo límite:</strong> 60 minutos</p>
                     <p><strong>📝 Total de preguntas:</strong> 30</p>
                     <p><strong>🎯 Tipo:</strong> Selección múltiple</p>
-                    <p><strong>📚 Nivel:</strong> Inglés Básico - 1er Semestre</p>
-                    <p><strong>👥 Grupo:</strong> 3AM-PRO</p>
+                    <p><strong>📚 Nivel:</strong> Cultura General - Básico</p>
                 </div>
                 
                 <div class="exam-rules">
@@ -106,7 +94,7 @@
             <!-- Pantalla de examen bloqueado -->
             <div class="blocked-screen" id="blockedScreen" style="display: none;">
                 <div class="icon">🚫</div>
-                <h2>EXAMEN BLOQUEADO - 1ER SEMESTRE</h2>
+                <h2>EXAMEN BLOQUEADO</h2>
                 <h3>Violación del protocolo de evaluación</h3>
                 
                 <div class="student-info" style="background: rgba(255,255,255,0.1); color: white;">
@@ -153,7 +141,7 @@
 
             <!-- Pantalla de resultados -->
             <div class="results-screen" id="resultsScreen" style="display: none;">
-                <h2>🎉 ¡EXAMEN COMPLETADO - 1ER SEMESTRE!</h2>
+                <h2>🎉 ¡EXAMEN COMPLETADO!</h2>
                 <div class="score" id="finalScore">0/30</div>
                 
                 <div class="student-info">
@@ -207,7 +195,7 @@
 
     <!-- Advertencia de pantalla completa -->
     <div class="fullscreen-warning" id="fullscreenWarning" style="display: none;">
-        <h2>⚠ ADVERTENCIA DE SEGURIDAD - 1ER SEMESTRE</h2>
+        <h2>⚠ ADVERTENCIA DE SEGURIDAD</h2>
         <p>Has salido del modo pantalla completa</p>
         <p>El examen se bloqueará automáticamente si continúas</p>
         <p><strong>Intentos restantes: <span id="remainingAttempts">2</span></strong></p>

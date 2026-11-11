@@ -1,311 +1,304 @@
-// Base de datos de preguntas del Semestre 1 - Nivel Básico (3AM-MEC)
+// Banco de preguntas - Examen de Cultura General (Nivel Básico)
 const quizData = [
-    // Sección 1: There is / There are (10 preguntas)
     {
-        "question": "1. _______________________ a library next to the park.",
+        "question": "¿Cuál es la capital de México?",
         "answers": [
-            "There is",
-            "There are",
-            "There has",
-            "There have"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "2. _______________________ 50 states in the United States.",
-        "answers": [
-            "There is",
-            "There are",
-            "There has",
-            "There have"
+            "Guadalajara",
+            "Ciudad de México",
+            "Monterrey",
+            "Puebla"
         ],
         "correct": 1
     },
     {
-        "question": "3. No, _______________________ polar bears at the South Pole.",
+        "question": "¿Cuántos días tiene un año normal?",
         "answers": [
-            "there isn't",
-            "there aren't",
-            "there is",
-            "there are"
+            "360",
+            "365",
+            "366",
+            "370"
         ],
         "correct": 1
     },
     {
-        "question": "4. A: _____________________ a message for me? B: No, _____.",
+        "question": "¿Cuál es el océano más grande del mundo?",
         "answers": [
-            "Is there / there isn't",
-            "Are there / there aren't",
-            "Is there / there aren't",
-            "Are there / there isn't"
+            "Atlántico",
+            "Índico",
+            "Ártico",
+            "Pacífico"
         ],
-        "correct": 0
+        "correct": 3
     },
     {
-        "question": "5. Why _______________________ so many cars in the parking lot?",
+        "question": "¿Qué planeta es conocido como el planeta rojo?",
         "answers": [
-            "is there",
-            "are there",
-            "there is",
-            "there are"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "6. A: I'm hungry. B: _______________________ a restaurant across the street.",
-        "answers": [
-            "There is",
-            "There are",
-            "There has",
-            "There have"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "7. How many days _______________________ in March, thirty or thirty-one?",
-        "answers": [
-            "is there",
-            "are there",
-            "there is",
-            "there are"
+            "Venus",
+            "Marte",
+            "Júpiter",
+            "Saturno"
         ],
         "correct": 1
     },
     {
-        "question": "8. _______________________ a few things I have to do this afternoon.",
+        "question": "¿Cuántos días tiene una semana?",
         "answers": [
-            "There is",
-            "There are",
-            "There has",
-            "There have"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "9. A: _______________________ a post office nearby? B: I'm sorry, I don't know.",
-        "answers": [
-            "Is there",
-            "Are there",
-            "There is",
-            "There are"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "10. _______________________ something I can help you with?",
-        "answers": [
-            "Is there",
-            "Are there",
-            "There is",
-            "There are"
-        ],
-        "correct": 0
-    },
-
-    // Sección 2: Pronombres posesivos (10 preguntas)
-    {
-        "question": "11. Tom left ________ bag at school.",
-        "answers": [
-            "his",
-            "hers",
-            "their",
-            "mine"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "12. The wallet with a lot of money in it is ________.",
-        "answers": [
-            "their",
-            "yours",
-            "her",
-            "his"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "13. Chris and Kelly brought ________ daughter to school.",
-        "answers": [
-            "ours",
-            "their",
-            "yours",
-            "mine"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "14. Is this ________ pencil?",
-        "answers": [
-            "your",
-            "yours",
-            "their",
-            "theirs"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "15. That's not Chris' jacket. It's ________.",
-        "answers": [
-            "mine",
-            "their",
-            "yours",
-            "hers"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "16. The cute white puppy is ________.",
-        "answers": [
-            "ours",
-            "her",
-            "his",
-            "theirs"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "17. Kelly forgot to bring ________ homework today.",
-        "answers": [
-            "theirs",
-            "her",
-            "his",
-            "yours"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "18. Who's food is this? Is it ________?",
-        "answers": [
-            "yours",
-            "their",
-            "hers",
-            "his"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "19. This house belongs to Zara and Ben. It's ________.",
-        "answers": [
-            "ours",
-            "theirs",
-            "yours",
-            "mine"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "20. Have you seen David? I think this pen is ________.",
-        "answers": [
-            "his",
-            "theirs",
-            "hers",
-            "yours"
-        ],
-        "correct": 0
-    },
-
-    // Sección 3: Vocabulario de familia (5 preguntas)
-    {
-        "question": "21. My uncle's son is my ________.",
-        "answers": [
-            "cousin",
-            "nephew",
-            "brother",
-            "son"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "22. My mother is my daughter's ________.",
-        "answers": [
-            "grandmother",
-            "mother",
-            "aunt",
-            "sister"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "23. My mother's brother is my ________.",
-        "answers": [
-            "uncle",
-            "cousin",
-            "nephew",
-            "brother"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "24. My sister's son is my ________.",
-        "answers": [
-            "nephew",
-            "niece",
-            "cousin",
-            "son"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "25. My son's mother is my ________.",
-        "answers": [
-            "wife",
-            "mother",
-            "sister",
-            "daughter"
-        ],
-        "correct": 0
-    },
-
-    // Sección 4: Vocabulario de ropa (5 preguntas)
-    {
-        "question": "26. ______ is a piece of clothing for girls and women that fits around the waist and hangs down like a dress.",
-        "answers": [
-            "skirt",
-            "trousers",
-            "blouse",
-            "jacket"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "27. ______ is a piece of material that you wear around your neck, head, or shoulders, especially when it is cold.",
-        "answers": [
-            "shirt",
-            "tie",
-            "scarf",
-            "glove"
+            "5",
+            "6",
+            "7",
+            "8"
         ],
         "correct": 2
     },
     {
-        "question": "28. ______ is a shirt for women.",
+        "question": "¿Cuál es el animal terrestre más grande?",
         "answers": [
-            "skirt",
-            "t-shirt",
-            "blouse",
-            "blazer"
+            "Elefante africano",
+            "Jirafa",
+            "Rinoceronte",
+            "Hipopótamo"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿En qué país se encuentra la Torre Eiffel?",
+        "answers": [
+            "Italia",
+            "España",
+            "Francia",
+            "Alemania"
         ],
         "correct": 2
     },
     {
-        "question": "29. ______ is a short coat.",
+        "question": "¿Qué gas necesitamos respirar para vivir?",
         "answers": [
-            "blazer",
-            "jacket",
-            "suit",
-            "blouse"
+            "Oxígeno",
+            "Nitrógeno",
+            "Helio",
+            "Hidrógeno"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuántos colores tiene el arcoíris?",
+        "answers": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es el resultado de 8 + 7?",
+        "answers": [
+            "14",
+            "15",
+            "16",
+            "17"
         ],
         "correct": 1
     },
     {
-        "question": "30. ______ is a piece of clothing that you wear on your foot inside your shoe.",
+        "question": "¿Cuál es el resultado de 6 × 4?",
         "answers": [
-            "socks",
-            "pants",
-            "boot",
-            "sleeve"
+            "20",
+            "22",
+            "24",
+            "26"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuántos lados tiene un triángulo?",
+        "answers": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué estación del año viene después del invierno?",
+        "answers": [
+            "Verano",
+            "Otoño",
+            "Primavera",
+            "Invierno"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es el planeta más cercano al Sol?",
+        "answers": [
+            "Mercurio",
+            "Venus",
+            "Tierra",
+            "Marte"
         ],
         "correct": 0
+    },
+    {
+        "question": "¿Quién pintó la Mona Lisa?",
+        "answers": [
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Vincent van Gogh",
+            "Miguel Ángel"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿En qué año llegó Cristóbal Colón a América?",
+        "answers": [
+            "1392",
+            "1492",
+            "1592",
+            "1692"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuántos meses tiene un año?",
+        "answers": [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿A qué temperatura hierve el agua al nivel del mar?",
+        "answers": [
+            "50 °C",
+            "80 °C",
+            "100 °C",
+            "120 °C"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué órgano bombea la sangre en el cuerpo humano?",
+        "answers": [
+            "Pulmón",
+            "Hígado",
+            "Corazón",
+            "Riñón"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es el idioma que se habla en Brasil?",
+        "answers": [
+            "Español",
+            "Portugués",
+            "Inglés",
+            "Francés"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué instrumento musical tiene teclas blancas y negras?",
+        "answers": [
+            "Guitarra",
+            "Violín",
+            "Piano",
+            "Flauta"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es la capital de España?",
+        "answers": [
+            "Barcelona",
+            "Madrid",
+            "Sevilla",
+            "Valencia"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuántos jugadores de un equipo están en la cancha en un partido de fútbol?",
+        "answers": [
+            "9",
+            "10",
+            "11",
+            "12"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cómo se llama el agua en estado sólido?",
+        "answers": [
+            "Vapor",
+            "Hielo",
+            "Nube",
+            "Lluvia"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué animal es conocido como el rey de la selva?",
+        "answers": [
+            "Tigre",
+            "León",
+            "Oso",
+            "Lobo"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál es el país más grande del mundo por su superficie?",
+        "answers": [
+            "Canadá",
+            "China",
+            "Rusia",
+            "Estados Unidos"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué festividad mexicana se celebra el 2 de noviembre?",
+        "answers": [
+            "Día de Muertos",
+            "Día de la Independencia",
+            "Navidad",
+            "Año Nuevo"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuántos minutos tiene una hora?",
+        "answers": [
+            "30",
+            "50",
+            "60",
+            "100"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué parte de la planta absorbe el agua del suelo?",
+        "answers": [
+            "Hoja",
+            "Raíz",
+            "Flor",
+            "Fruto"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál es el satélite natural de la Tierra?",
+        "answers": [
+            "Sol",
+            "Luna",
+            "Venus",
+            "Marte"
+        ],
+        "correct": 1
     }
 ];
 // Variables globales
@@ -520,7 +513,16 @@ function shuffleArray(array) {
 
 function selectRandomQuestions() {
     const shuffled = shuffleArray(quizData);
-    return shuffled.slice(0, 30); // Asegurar 30 preguntas
+    // Mezclar también el orden de las respuestas de cada pregunta
+    return shuffled.slice(0, 30).map(q => {
+        const options = q.answers.map((text, i) => ({ text, isCorrect: i === q.correct }));
+        const mixed = shuffleArray(options);
+        return {
+            question: q.question,
+            answers: mixed.map(o => o.text),
+            correct: mixed.findIndex(o => o.isCorrect)
+        };
+    });
 }
 
 // ========== SISTEMA ANTI-TRAMPAS ==========
@@ -1025,7 +1027,7 @@ document.addEventListener('gesturestart', function (e) {
 });
 
 document.addEventListener('touchmove', function(event) {
-    // Solo bloquear el gesto de pellizcar para zoom (2 dedos)
+    // Solo bloquear el pellizco de zoom (2 dedos); el scroll de 1 dedo debe funcionar
     if (event.touches && event.touches.length > 1) {
         event.preventDefault();
     }
